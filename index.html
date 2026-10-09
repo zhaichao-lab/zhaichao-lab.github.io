@@ -1,1 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zhai Lab | Prof. Chao Zhai</title>
+    <style>
+        :root {
+            --primary-color: #0d3b66;
+            --accent-color: #0066cc;
+            --text-color: #2b2d42;
+            --bg-light: #f8f9fa;
+            --border-color: #e9ecef;
+        }
 
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            padding: 3rem 1rem 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.6rem;
+            font-weight: 700;
+        }
+
+        header p {
+            margin-top: 0.5rem;
+            font-size: 1.25rem;
+            color: #d0e1f9;
+        }
+
+        nav {
+            background-color: #082542;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 12px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 6px 14px;
+            border-radius: 4px;
+            transition: background 0.2s ease-in-out;
+        }
+
+        nav a:hover {
+            background-color: var(--accent-color);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem;
+        }
+
+        section {
+            margin-bottom: 3.5rem;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .bio-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+
+        .bio-details {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #e8f4f8;
+            color: #0056b3;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-right: 6px;
+            margin-bottom: 6px;
+        }
+
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+
+        ul.clean-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul.clean-list li {
+            position: relative;
+            padding-left: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        ul.clean-list li::before {
+            content: "•";
+            color: var(--accent-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .pub-item {
+            margin-bottom: 1.2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .pub-title {
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+
+        .pub-authors {
+            color: #555555;
+            font-size: 0.95rem;
+        }
+
+        .pub-venue {
+            font-style: italic;
+            color: var(--primary-color);
+            font-size: 0.9rem;
+        }
+
+        .award-item {
+            margin-bottom: 0.6rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2.5rem 1rem;
+            background-color: var(--bg-light);
+            border-top: 1px solid var(--border-color);
+            color: #666666;
+            font-size: 0.9rem;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Zhai Research Group</h1>
+        <p>Resilient Systems, Cooperative Control & Cyber-Physical Security</p>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#monographs">Monographs</a>
+        <a href="#publications">Publications</a>
+        <a href="#awards">Honors & Awards</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container">
+        
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Professor Chao Zhai</h2>
+            <div class="bio-box">
+                <div class="bio-details">
+                    <p>
+                        <strong>Prof. Chao Zhai</strong> is a Full Professor at the School of Artificial Intelligence and Automation, 
+                        China University of Geosciences (Wuhan). He received his Ph.D. in Complex Systems and Control from the 
+                        Institute of Systems Science, Chinese Academy of Sciences (2013). Prior to joining CUG, he held research positions at 
+                        the Singapore-ETH Centre (ETH Zurich), University of Hong Kong, and University of Bristol.
+                    </p>
+                    <p>
+                        <span class="badge">IEEE Senior Member</span>
+                        <span class="badge">H-index: 25</span>
+                        <span class="badge">Google Citations: 1800+</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Interests -->
+        <section id="research">
+            <h2>Research Focus</h2>
+            <div class="grid-cards">
+                <div class="card">
+                    <h3>Cooperative & Coverage Control</h3>
+                    <p>Distributed coverage algorithms, non-convex region partitioning, multi-agent sweep coverage, and geohazard monitoring systems.</p>
+                </div>
+                <div class="card">
+                    <h3>Resilient Systems & CPS</h3>
+                    <p>Cascade failure prevention in power grids, Model Predictive Control (MPC), Control Barrier Functions (CBFs), and game theory.</p>
+                </div>
+                <div class="card">
+                    <h3>Active Disturbance Rejection & Motor Coordination</h3>
+                    <p>Tracking Differentiators (TD), ADRC for flight environment simulation, and interpersonal social motor coordination in joint actions.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Monographs -->
+        <section id="monographs">
+            <h2>Authored Monographs</h2>
+            <ul class="clean-list">
+                <li>
+                    <strong>C. Zhai</strong>, <em>Control and Optimization Methods for Complex System Resilience</em>, Springer-Verlag, ISBN 978-981-99-3052-4, 2023.
+                </li>
+                <li>
+                    <strong>C. Zhai</strong>, H. Zhang, G. Xiao, <em>Cooperative Coverage Control of Multi-Agent Systems and Its Applications</em>, Springer-Verlag, ISBN 978-
