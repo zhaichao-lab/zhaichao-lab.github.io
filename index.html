@@ -3,20 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zhai Lab | Prof. Chao Zhai</title>
+    <title>Zhai Research Group | Prof. Chao Zhai</title>
     <style>
         :root {
-            --primary-color: #0d3b66;
-            --accent-color: #0066cc;
-            --text-color: #2b2d42;
-            --bg-light: #f8f9fa;
-            --border-color: #e9ecef;
+            --primary-color: #0b3c5d;
+            --secondary-color: #328cc1;
+            --accent-color: #d9b310;
+            --text-dark: #1d2731;
+            --bg-light: #f7f9fb;
+            --border-color: #e1e8ed;
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
             line-height: 1.6;
-            color: var(--text-color);
+            color: var(--text-dark);
             margin: 0;
             padding: 0;
             background-color: #ffffff;
@@ -25,92 +30,110 @@
         header {
             background-color: var(--primary-color);
             color: #ffffff;
-            padding: 3rem 1rem 2rem;
+            padding: 3.5rem 1.5rem 2.5rem;
             text-align: center;
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.6rem;
+            font-size: 2.8rem;
             font-weight: 700;
+            letter-spacing: -0.5px;
         }
 
         header p {
-            margin-top: 0.5rem;
+            margin-top: 0.6rem;
             font-size: 1.25rem;
-            color: #d0e1f9;
+            color: #b9d8ee;
         }
 
-        nav {
-            background-color: #082542;
+        .header-badges {
+            margin-top: 1.2rem;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 15px;
-            padding: 12px 0;
+            gap: 10px;
+        }
+
+        .header-badge {
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        nav {
+            background-color: #07263b;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 10px 1rem;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         nav a {
             color: #ffffff;
             text-decoration: none;
             font-weight: 500;
-            padding: 6px 14px;
+            font-size: 0.95rem;
+            padding: 8px 14px;
             border-radius: 4px;
-            transition: background 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
         }
 
         nav a:hover {
-            background-color: var(--accent-color);
+            background-color: var(--secondary-color);
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1080px;
             margin: 0 auto;
-            padding: 2.5rem 1.5rem;
+            padding: 3rem 1.5rem;
         }
 
         section {
-            margin-bottom: 3.5rem;
+            margin-bottom: 4rem;
+            scroll-margin-top: 70px;
         }
 
         h2 {
             color: var(--primary-color);
             border-bottom: 2px solid var(--border-color);
-            padding-bottom: 0.5rem;
+            padding-bottom: 0.6rem;
             font-size: 1.8rem;
             margin-bottom: 1.5rem;
         }
 
-        .bio-box {
+        .profile-card {
             display: flex;
             flex-wrap: wrap;
             gap: 2rem;
-            align-items: flex-start;
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2rem;
         }
 
-        .bio-details {
+        .profile-info {
             flex: 1;
             min-width: 300px;
         }
 
-        .badge {
-            display: inline-block;
-            background-color: #e8f4f8;
-            color: #0056b3;
-            padding: 3px 10px;
-            border-radius: 12px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-right: 6px;
-            margin-bottom: 6px;
+        .profile-info h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+            font-size: 1.5rem;
         }
 
-        .grid-cards {
+        .grid-3 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
         }
 
@@ -119,71 +142,105 @@
             border: 1px solid var(--border-color);
             border-radius: 8px;
             padding: 1.5rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         }
 
         .card h3 {
             margin-top: 0;
-            color: var(--accent-color);
-            font-size: 1.2rem;
+            color: var(--secondary-color);
+            font-size: 1.25rem;
         }
 
-        ul.clean-list {
+        ul.styled-list {
             list-style-type: none;
             padding-left: 0;
+            margin: 0;
         }
 
-        ul.clean-list li {
+        ul.styled-list li {
             position: relative;
-            padding-left: 1.2rem;
+            padding-left: 1.4rem;
             margin-bottom: 0.8rem;
         }
 
-        ul.clean-list li::before {
-            content: "•";
-            color: var(--accent-color);
-            font-weight: bold;
+        ul.styled-list li::before {
+            content: "▪";
+            color: var(--secondary-color);
             position: absolute;
             left: 0;
+            font-size: 1.2rem;
+            line-height: 1;
         }
 
-        .pub-item {
-            margin-bottom: 1.2rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px dashed var(--border-color);
+        .pub-card {
+            padding: 1rem 1.2rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--secondary-color);
+            background-color: var(--bg-light);
+            border-radius: 0 6px 6px 0;
         }
 
         .pub-title {
             font-weight: 600;
             font-size: 1.05rem;
+            color: var(--text-dark);
         }
 
         .pub-authors {
             color: #555555;
             font-size: 0.95rem;
+            margin-top: 0.2rem;
         }
 
         .pub-venue {
             font-style: italic;
             color: var(--primary-color);
             font-size: 0.9rem;
+            margin-top: 0.2rem;
         }
 
-        .award-item {
-            margin-bottom: 0.6rem;
+        .grant-table, .staff-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .grant-table th, .grant-table td,
+        .staff-table th, .staff-table td {
+            border: 1px solid var(--border-color);
+            padding: 10px 14px;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        .grant-table th, .staff-table th {
+            background-color: var(--bg-light);
+            color: var(--primary-color);
+        }
+
+        .tag {
+            display: inline-block;
+            background: #e2eef7;
+            color: var(--primary-color);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
         }
 
         footer {
             text-align: center;
             padding: 2.5rem 1rem;
-            background-color: var(--bg-light);
-            border-top: 1px solid var(--border-color);
-            color: #666666;
+            background-color: var(--primary-color);
+            color: #ffffff;
             font-size: 0.9rem;
         }
 
+        footer a {
+            color: #b9d8ee;
+        }
+
         a {
-            color: var(--accent-color);
+            color: var(--secondary-color);
             text-decoration: none;
         }
 
@@ -196,66 +253,273 @@
 
     <header>
         <h1>Zhai Research Group</h1>
-        <p>Resilient Systems, Cooperative Control & Cyber-Physical Security</p>
+        <p>Resilient Systems, Multi-Agent Systems & Active Disturbance Rejection Control</p>
+        <div class="header-badges">
+            <span class="header-badge">School of Artificial Intelligence & Automation</span>
+            <span class="header-badge">China University of Geosciences (Wuhan)</span>
+            <span class="header-badge">IEEE Senior Member</span>
+        </div>
     </header>
 
     <nav>
-        <a href="#about">About</a>
-        <a href="#research">Research</a>
+        <a href="#about">About Director</a>
+        <a href="#research">Research Focus</a>
         <a href="#monographs">Monographs</a>
         <a href="#publications">Publications</a>
-        <a href="#awards">Honors & Awards</a>
-        <a href="#teaching">Teaching</a>
+        <a href="#patents">Patents</a>
+        <a href="#grants">Grants & Funding</a>
+        <a href="#team">Team & Teaching</a>
+        <a href="#service">Professional Activities</a>
         <a href="#contact">Contact</a>
     </nav>
 
     <div class="container">
         
-        <!-- About Section -->
+        <!-- About Director -->
         <section id="about">
-            <h2>About Professor Chao Zhai</h2>
-            <div class="bio-box">
-                <div class="bio-details">
+            <h2>About the Director</h2>
+            <div class="profile-card">
+                <div class="profile-info">
+                    <h3>Prof. Chao Zhai</h3>
                     <p>
-                        <strong>Prof. Chao Zhai</strong> is a Full Professor at the School of Artificial Intelligence and Automation, 
-                        China University of Geosciences (Wuhan). He received his Ph.D. in Complex Systems and Control from the 
-                        Institute of Systems Science, Chinese Academy of Sciences (2013). Prior to joining CUG, he held research positions at 
-                        the Singapore-ETH Centre (ETH Zurich), University of Hong Kong, and University of Bristol.
+                        <strong>Chao Zhai</strong> is a Full Professor at the School of Artificial Intelligence and Automation, 
+                        China University of Geosciences, Wuhan, China[cite: 1]. He earned his Ph.D. in Complex Systems and Control from the 
+                        Institute of Systems Science, Chinese Academy of Sciences (2013) under the supervision of Prof. Yiguang Hong[cite: 2].
                     </p>
                     <p>
-                        <span class="badge">IEEE Senior Member</span>
-                        <span class="badge">H-index: 25</span>
-                        <span class="badge">Google Citations: 1800+</span>
+                        Prior to joining CUG, Prof. Zhai served as a Research Fellow at the Singapore-ETH Centre (ETH Zurich)[cite: 1], 
+                        a Research Associate at the University of Hong Kong[cite: 1], and a Postdoctoral Fellow at the University of Bristol (UK) 
+                        working with Prof. Mario di Bernardo[cite: 1].
+                    </p>
+                    <p>
+                        <span class="tag">Scopus ID: 56187575100</span>[cite: 1]
+                        <span class="tag">ORCID: 0000-0002-2039-9878</span>[cite: 1]
+                        <span class="tag">Google Citations: 1860+</span>[cite: 1]
+                        <span class="tag">H-Index: 25</span>[cite: 1]
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- Research Interests -->
+        <!-- Research Focus -->
         <section id="research">
-            <h2>Research Focus</h2>
-            <div class="grid-cards">
+            <h2>Research Areas</h2>
+            <div class="grid-3">
                 <div class="card">
-                    <h3>Cooperative & Coverage Control</h3>
-                    <p>Distributed coverage algorithms, non-convex region partitioning, multi-agent sweep coverage, and geohazard monitoring systems.</p>
+                    <h3>Multi-Agent Cooperative Control</h3>
+                    <p>Distributed sweep and coverage algorithms in non-convex regions, conformal mapping, load balancing, and UAV fleet optimization for geohazard monitoring[cite: 1, 3, 4].</p>
                 </div>
                 <div class="card">
                     <h3>Resilient Systems & CPS</h3>
-                    <p>Cascade failure prevention in power grids, Model Predictive Control (MPC), Control Barrier Functions (CBFs), and game theory.</p>
+                    <p>Cascade failure prevention in power networks, Model Predictive Control (MPC), dynamic security assessment, and Control Barrier Functions (CBFs)[cite: 1].</p>
                 </div>
                 <div class="card">
                     <h3>Active Disturbance Rejection & Motor Coordination</h3>
-                    <p>Tracking Differentiators (TD), ADRC for flight environment simulation, and interpersonal social motor coordination in joint actions.</p>
+                    <p>Tracking Differentiator (TD) theory, ADRC for flight simulation test facilities, and interactive virtual player algorithms for social motor coordination[cite: 1, 3, 4, 7, 8].</p>
                 </div>
             </div>
         </section>
 
         <!-- Monographs -->
         <section id="monographs">
-            <h2>Authored Monographs</h2>
-            <ul class="clean-list">
-                <li>
-                    <strong>C. Zhai</strong>, <em>Control and Optimization Methods for Complex System Resilience</em>, Springer-Verlag, ISBN 978-981-99-3052-4, 2023.
-                </li>
-                <li>
-                    <strong>C. Zhai</strong>, H. Zhang, G. Xiao, <em>Cooperative Coverage Control of Multi-Agent Systems and Its Applications</em>, Springer-Verlag, ISBN 978-
+            <h2>Monographs & Books</h2>
+            <div class="pub-card">
+                <div class="pub-title">1. Control and Optimization Methods for Complex System Resilience</div>
+                <div class="pub-authors"><strong>Chao Zhai</strong></div>
+                <div class="pub-venue">Springer-Verlag, ISBN 978-981-99-3052-4, 2023 (Springer Recommended)[cite: 3].</div>
+            </div>
+            <div class="pub-card">
+                <div class="pub-title">2. Cooperative Coverage Control of Multi-Agent Systems and Its Applications</div>
+                <div class="pub-authors"><strong>Chao Zhai</strong>, Hai-Tao Zhang, Gaoxi Xiao</div>
+                <div class="pub-venue">Springer-Verlag, ISBN 978-981-16-7625-3, 2021[cite: 3].</div>
+            </div>
+            <div class="pub-card">
+                <div class="pub-title">3. Tracking Differentiator Algorithms: Theories, Implementations and Applications</div>
+                <div class="pub-authors">Hai-Tao Zhang, Gaoxi Xiao, Y. Xie, W. Guo, <strong>Chao Zhai</strong></div>
+                <div class="pub-venue">Springer-Verlag, ISBN 978-981-15-9383-3, 2020[cite: 3].</div>
+            </div>
+        </section>
+
+        <!-- Publications -->
+        <section id="publications">
+            <h2>Selected Journal Publications</h2>
+
+            <div class="pub-card">
+                <div class="pub-title">Diffeomorphic coverage control in non-convex annulus region with conformal mapping</div>
+                <div class="pub-authors">X. Feng, <strong>C. Zhai*</strong>, C. Zhang, and Y. He</div>
+                <div class="pub-venue">Automatica, vol. 191, no. 113143, 2026[cite: 3].</div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Sectorial coverage control with load balancing in non-convex hollow environments</div>
+                <div class="pub-authors"><strong>C. Zhai</strong>, P. Fan, and H. Zhang</div>
+                <div class="pub-venue">Automatica, vol. 157, no. 111246, 2023[cite: 3].</div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Coverage optimization of robotic sensor networks in non-convex environments via rotary pointer partitions</div>
+                <div class="pub-authors"><strong>C. Zhai</strong>, P. Fan, and H. Zhang</div>
+                <div class="pub-venue">IEEE Transactions on Control Systems Technology, vol. 32, no. 3, pp. 1066-1073, 2024[cite: 4].</div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Design and validation of a virtual player for studying interpersonal coordination in the mirror game</div>
+                <div class="pub-authors"><strong>C. Zhai</strong>, F. Alderisio, P. Slowinski, K. Tsaneva-Atanasova, and M. di Bernardo</div>
+                <div class="pub-venue">IEEE Transactions on Cybernetics, vol. 48, no. 3, pp. 1018-1029, 2018[cite: 4].</div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">An optimal control approach to identify the worst case cascading failures in power systems</div>
+                <div class="pub-authors"><strong>C. Zhai</strong>, H. Zhang, G. Xiao, and T. Pan</div>
+                <div class="pub-venue">IEEE Transactions on Control of Network Systems, vol. 7, no. 2, pp. 956-966, 2020[cite: 4].</div>
+            </div>
+
+            <div class="pub-card">
+                <div class="pub-title">Decentralized sweep coverage algorithm for multi-agent systems with workload uncertainties</div>
+                <div class="pub-authors"><strong>C. Zhai</strong> and Y. Hong</div>
+                <div class="pub-venue">Automatica, vol. 49, no. 7, pp. 2154-2159, 2013[cite: 4].</div>
+            </div>
+
+            <p><a href="https://scholar.google.com/citations?user=LDH5iTkAAAAJ" target="_blank">🌐 Explore full list of 60+ journal papers on Google Scholar →</a></p>
+        </section>
+
+        <!-- Patents -->
+        <section id="patents">
+            <h2>Patents</h2>
+            <ul class="styled-list">
+                <li><strong>Interactive Motor Control of Human Hand:</strong> An event-triggered based approach for interactive motor control of human hand (Serial No. 202010854724.8)[cite: 13].</li>
+                <li><strong>Geohazard Monitoring System:</strong> A geohazard monitoring approach and system based on distributed coverage control (Serial No. 202111579950.0)[cite: 13].</li>
+                <li><strong>Intelligent Robotic System:</strong> An intelligent charging robotic system and approach (Serial No. 202110914388.6)[cite: 13].</li>
+            </ul>
+        </section>
+
+        <!-- Grants -->
+        <section id="grants">
+            <h2>Grants & Research Funding</h2>
+            <table class="grant-table">
+                <thead>
+                    <tr>
+                        <th>Project Name / Agency</th>
+                        <th>Role</th>
+                        <th>Period</th>
+                        <th>Budget</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>National Natural Science Foundation of China (U25A20474)[cite: 14]</td>
+                        <td>Co-PI[cite: 14]</td>
+                        <td>2025–2029[cite: 14]</td>
+                        <td>RMB 2.3 Million[cite: 14]</td>
+                    </tr>
+                    <tr>
+                        <td>Startup Funding of China University of Geosciences[cite: 13]</td>
+                        <td>PI[cite: 13]</td>
+                        <td>2020–2025[cite: 13]</td>
+                        <td>RMB 2.0 Million[cite: 13]</td>
+                    </tr>
+                    <tr>
+                        <td>University-Company Joint Research Projects[cite: 13, 14]</td>
+                        <td>PI[cite: 13, 14]</td>
+                        <td>2022–2027[cite: 13, 14]</td>
+                        <td>RMB 1.5 Million+ (Combined)[cite: 13, 14]</td>
+                    </tr>
+                    <tr>
+                        <td>University-Industry Collaborative Research, Ministry of Education[cite: 13]</td>
+                        <td>PI[cite: 13]</td>
+                        <td>2021–2022[cite: 13]</td>
+                        <td>RMB 20,000[cite: 13]</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Team & Teaching -->
+        <section id="team">
+            <h2>Team & Teaching</h2>
+            <h3>Current & Past Research Students</h3>
+            <table class="staff-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Role</th>
+                        <th>Research Topic</th>
+                        <th>Period</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Xun Feng[cite: 16]</td>
+                        <td>Ph.D. Student[cite: 16]</td>
+                        <td>Multi-agent Coverage Control[cite: 16]</td>
+                        <td>2023–Present[cite: 16]</td>
+                    </tr>
+                    <tr>
+                        <td>Xiaozhou Yang[cite: 16]</td>
+                        <td>Ph.D. Student[cite: 16]</td>
+                        <td>Fault Monitoring[cite: 16]</td>
+                        <td>2017–2021[cite: 16]</td>
+                    </tr>
+                    <tr>
+                        <td>Wei Zhang[cite: 16]</td>
+                        <td>Master Student[cite: 16]</td>
+                        <td>Multi-agent Coverage Control[cite: 16]</td>
+                        <td>2020–2023[cite: 16]</td>
+                    </tr>
+                    <tr>
+                        <td>Bowen Guo[cite: 16]</td>
+                        <td>Master Student[cite: 16]</td>
+                        <td>Social Motor Coordination[cite: 16]</td>
+                        <td>2020–2023[cite: 16]</td>
+                    </tr>
+                    <tr>
+                        <td>Zhaoxu Wang[cite: 16]</td>
+                        <td>Master Student[cite: 16]</td>
+                        <td>Power Systems Protection[cite: 16]</td>
+                        <td>2020–2023[cite: 16]</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top: 2rem;">Teaching Activities</h3>
+            <ul class="styled-list">
+                <li><strong>Modern Control Engineering</strong> (Undergraduate) — China University of Geosciences[cite: 2]</li>
+                <li><strong>Optimal Control System</strong> (Undergraduate) — China University of Geosciences[cite: 2]</li>
+                <li><strong>Linear System Theory</strong> (Graduate) — China University of Geosciences[cite: 2]</li>
+                <li><strong>Nonlinear Systems & Dynamics</strong> (Graduate) — Chinese Academy of Sciences[cite: 2]</li>
+            </ul>
+        </section>
+
+        <!-- Professional Activities -->
+        <section id="service">
+            <h2>Professional Activities & Editorial Roles</h2>
+            <ul class="styled-list">
+                <li><strong>Academic Editor:</strong> Journal of Control Science and Engineering[cite: 14]</li>
+                <li><strong>Guest Editor:</strong> Applied Sciences (Special Issue on Magnetic Levitation Systems)[cite: 14]</li>
+                <li><strong>Associate Editor:</strong> American Control Conference (ACC)[cite: 14]</li>
+                <li><strong>Associate Editor:</strong> IEEE Conference on Decision and Control (CDC)[cite: 14]</li>
+                <li><strong>Associate Editor:</strong> IEEE Conference on Control Technology and Applications (CCTA)[cite: 14]</li>
+                <li><strong>Committee Member:</strong> IEEE CSS Conferences Editorial Board, IEEE CSS TC on Process Control, IFAC TC on Networked Systems[cite: 14]</li>
+            </ul>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact">
+            <h2>Contact & Institutional Links</h2>
+            <p><strong>Office Address:</strong> School of Artificial Intelligence and Automation, China University of Geosciences, Lumo Road 388, Hongshan District, Wuhan, Hubei, China[cite: 1]</p>
+            <p><strong>Email:</strong> <code>zhaichao [at] amss.ac.cn</code>[cite: 1]</p>
+            <p><strong>Academic Links:</strong>
+                <a href="http://grzy.cug.edu.cn/zhaichao/en/index.htm" target="_blank">CUG Homepage</a>[cite: 1] | 
+                <a href="https://scholar.google.com/citations?user=LDH5iTkAAAAJ" target="_blank">Google Scholar</a>[cite: 1] | 
+                <a href="https://www.researchgate.net/profile/Chao-Zhai" target="_blank">ResearchGate</a>[cite: 1]
+            </p>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; Zhai Research Group — School of Artificial Intelligence and Automation, CUG Wuhan. Hosted via GitHub Pages.</p>
+    </footer>
+
+</body>
+</html>
