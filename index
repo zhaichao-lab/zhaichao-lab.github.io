@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name / Research Group Homepage</title>
+    <!-- Google Fonts for clean academic typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #003366; /* Academic Navy Blue */
+            --text-color: #333333;
+            --light-bg: #f8f9fa;
+            --border-color: #e5e5e5;
+        }
+
+        body {
+            font-family: 'Open Sans', Arial, sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+
+        /* Layout Container */
+        .container {
+            display: flex;
+            max-width: 1100px;
+            margin: 40px auto;
+            background: #fff;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        /* Sidebar Navigation */
+        aside {
+            width: 260px;
+            background-color: var(--light-bg);
+            border-right: 1px solid var(--border-color);
+            padding: 30px 20px;
+            box-sizing: border-box;
+        }
+
+        aside h2 {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        aside ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        aside ul li {
+            margin-bottom: 12px;
+        }
+
+        aside ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        aside ul li a:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        /* Main Content Area */
+        main {
+            flex: 1;
+            padding: 40px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-top: 0;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-top: 30px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 5px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        .bio-header {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .bio-header img {
+            width: 150px;
+            height: 180px;
+            object-fit: cover;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Publication & List formatting */
+        ul.pub-list {
+            padding-left: 20px;
+        }
+
+        ul.pub-list li {
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #777;
+            margin: 20px 0 40px 0;
+        }
+
+        /* Responsive design for mobile devices */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                margin: 10px;
+            }
+            aside {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+            }
+            .bio-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Sidebar Navigation (Similar to Google Sites layout) -->
+        <aside>
+            <h2>Navigation</h2>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#research">Research Areas</a></li>
+                <li><a href="#group">Research Group</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#contacts">Contacts</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main>
+            <section id="home">
+                <h1>Your Name / Group Name</h1>
+                <div class="bio-header">
+                    <!-- Replace with your photo URL -->
+                    <img src="https://via.placeholder.com/150x180" alt="Profile Photo">
+                    <div>
+                        <p><strong>Professor / Principal Investigator</strong></p>
+                        <p>Department of Electrical Engineering, Information Technology, or Computer Science<br>
+                        Your University / Institute Name<br>
+                        City, Country</p>
+                        <p>Welcome to our research group's homepage. We focus on modeling, identification, and control design for complex nonlinear systems, networks, and applications.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="research">
+                <h2>Research Areas</h2>
+                <p>Our theoretical and applied work spans several key pillars:</p>
+                <ul>
+                    <li><strong>Nonlinear Control Theory:</strong> Switching control designs, contraction theory, and piecewise-smooth systems.</li>
+                    <li><strong>Network Systems:</strong> Analysis, synchronization, and distributed control of complex networks.</li>
+                    <li><strong>Systems & Synthetic Biology:</strong> Multicellular control, gene regulation, and circuit realization in microbial consortia.</li>
+                </ul>
+            </section>
+
+            <section id="group">
+                <h2>Research Group</h2>
+                <p>Our team consists of brilliant postdocs, PhD students, and collaborators working across interdisciplinary domains:</p>
+                <ul>
+                    <li><strong>Postdocs:</strong> Dr. Jane Doe, Dr. John Smith</li>
+                    <li><strong>PhD Students:</strong> Alice Johnson, Bob Lee</li>
+                </ul>
+            </section>
+
+            <section id="publications">
+                <h2>Recent Publications</h2>
+                <ul class="pub-list">
+                    <li>Author, A., Author, B., "Title of a recent representative paper published in a top journal", <em>IEEE Transactions</em>, 2026.</li>
+                    <li>Author, C., "Another significant contribution to systems and control or synthetic biology", <em>Journal Name</em>, 2025.</li>
+                </ul>
+            </section>
+
+            <section id="contacts">
+                <h2>Contacts</h2>
+                <p>
+                    <strong>Email:</strong> your.email@university.edu<br>
+                    <strong>Office:</strong> Room XYZ, Building ABC<br>
+                    <strong>Address:</strong> Street Name 21, 80125 City, Country
+                </p>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        &copy; 2026 Your Name / Research Group. Hosted on GitHub Pages.
+    </body>
+</html>
